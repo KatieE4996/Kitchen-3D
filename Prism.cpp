@@ -1,10 +1,10 @@
 #include "Prism.h"
 
 /*************************************
-Name        Prism.cpp
-Purpose:    Rectangle class implementation file
-Author:     Easlon based on https://cs.lmu.edu/~ray/notes/openglexamples/
-Date:       3/31/2020
+Function:   Rectangle Prism class file
+Purpose:    create a prism
+Author:      Katie Easlon modified from the Cube.cpp to allow for more deminsions
+Date:   04/01/2020
 *************************************/
 
 //Constructors 

@@ -144,7 +144,7 @@
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Checkerboard.cpp" />
+    <ClCompile Include="Kitchen.cpp" />
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="Prism.cpp" />
     <ClCompile Include="RGBColor.cpp" />
@@ -155,7 +155,7 @@
   <ItemGroup>
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="Checkerboard.h" />
+    <ClInclude Include="Kitchen.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="Prism.h" />

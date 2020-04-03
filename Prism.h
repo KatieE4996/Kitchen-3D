@@ -9,7 +9,7 @@
 /*************************************
 Function:   Rectangle Prism class file
 Purpose:    create a prism
-Author:      Katie Easlon modified to use Location and RGB class files
+Author:      Katie Easlon modified from the Cube.cpp to allow for more deminsions
 Date:   3/31/2020
 *************************************/
 

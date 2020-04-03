@@ -1,10 +1,10 @@
 #include "Cube.h"
 
 /*************************************
-Name        Cube.cpp
-Purpose:    Cube class implementation file
-Author:     Easlon based on https://cs.lmu.edu/~ray/notes/openglexamples/
-Date:       3/31/2020
+Function:   Cube class file
+Purpose:    create a cube
+Author:     Easlon, math for the vertices was based on the https://www.youtube.com/watch?v=vcMox6i8f4Y.
+Date:   3/31/2020
 *************************************/
 
 //Constructors 
@@ -34,7 +34,6 @@ void Cube::drawCube()
 {
 	GLfloat half = edgeLength * 0.5;
 	GLfloat x = centerPos.getX(); GLfloat y = centerPos.getY(); GLfloat z = centerPos.getZ();
-
 	GLfloat vertices[] =
 	{
 		//Front face

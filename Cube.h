@@ -9,7 +9,7 @@
 /*************************************
 Function:   Cube class file
 Purpose:    create a cube
-Author:      Katie Easlon modified to use Location and RGB class files
+Author:     Easlon, math for the vertices was based on the https://www.youtube.com/watch?v=vcMox6i8f4Y. 
 Date:   3/31/2020
 *************************************/
 

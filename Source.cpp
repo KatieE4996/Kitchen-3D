@@ -2,8 +2,7 @@
 #include <GL/glut.h>
 #include "location.h"
 #include "RGBColor.h"
-#include "Ball.h"
-#include "Checkerboard.h"
+#include "Kitchen.h"
 #include "Camera.h"
 #include <cmath>
 #include <iostream>
@@ -14,17 +13,16 @@
 using namespace std;
 
 /*************************************************************************
-Class:		Checkboard class implementation
-Purpose:	Provide a Red/White 8x8 checkerboard
-Author      Cooper, using https://cs.lmu.edu/~ray/notes/openglexamples/ as an inital base
-Date:	    3/2/2020
+Class:		Kitchen class implementation
+Purpose:	Provide a room with three blue walls, black and white checkered floor, a red ceiling. Based on Checkboard provided by Cooper
+Author      Modified by Easlon from Cooper, using https://cs.lmu.edu/~ray/notes/openglexamples/ as an inital base
+Date:	    04/02/2020
 
 Note:       Implementation uses existing Location, RGBColor classes rather than primitives
 ************************************************************************/
 //  globals
 
-Ball balls[7];          //  seven balls in the example
-Checkerboard board;
+Kitchen board;
 Camera camera;
 Cube cubes;
 Cube cuttingBoard;
@@ -70,38 +68,6 @@ void init() {
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     board.create();
-}
-
-/*************************************
-Function:   initBalls()
-Purpose:    set up 7 bouncing balls
-Author:      Cooper
-Date:       3/2/2020
-*************************************/
-void initBalls() {
-    default_random_engine generator;
-    uniform_int_distribution<int> distribution(1, 7);
-    Location location(0, 0, 0);
-    black.toGLfloatArray(BLACK);
-    red.toGLfloatArray(RED);
-    green.toGLfloatArray(GREEN);
-    blue.toGLfloatArray(BLUE);
-    magenta.toGLfloatArray(MAGENTA);
-    yellow.toGLfloatArray(YELLOW);
-    cyan.toGLfloatArray(CYAN);
-    white.toGLfloatArray(WHITE);
-    
-    for (int i = 0; i < sizeof balls / sizeof(Ball); i++) {
-        balls[i].setColor(colors[i]);
-        balls[i].setRadius(0.5);
-        balls[i].setDirection(1);
-        float x = distribution(generator);
-        float z = distribution(generator);
-        float y = distribution(generator);
-        location.setLocation(x, y, z);
-        balls[i].setLocation(location);
-    }
-
 }
 
 /*************************************
@@ -412,7 +378,7 @@ void init_Light()
 Function:   display()
 Purpose:    set up display and update
 Author:      https://cs.lmu.edu/~ray/notes/openglexamples/ modified by Easlon
-Date:       4/1/2020
+Date:       4/2/2020
 *************************************/
 void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -421,7 +387,7 @@ void display() {
         board.centerx(), 0.0, board.centerz(),
         0.0, 1.0, 0.0);
     board.draw();
-    prism.drawPrism();
+    //prism.drawPrism();
 
     //draws the counters
     for (int i = 0; i < 9; i++) {
@@ -495,9 +461,7 @@ void special(int key, int, int) {
 
 // Initializes GLUT and enters the main loop.
 int main(int argc, char** argv) {
-    //initCube();
-    //initPrism();
-    //initBalls();
+    
     init_Counters();
     init_Cabniets();
     init_Fridge();
@@ -505,6 +469,7 @@ int main(int argc, char** argv) {
     init_Table();
     init_Cheese();
     init_Light();
+
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowPosition(80, 80);
